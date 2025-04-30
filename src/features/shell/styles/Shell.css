@@ -1,0 +1,108 @@
+/* Shell layout styles */
+.shell-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.shell-main-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Header styles */
+.shell-header {
+  flex-shrink: 0;
+}
+
+/* Content styles */
+.shell-content {
+  flex: 1;
+  overflow: auto;
+  transition: margin 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.shell-content-inner {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.shell-content--with-context {
+  margin-right: 300px; /* Adjust based on your context sidebar width */
+}
+
+.shell-content--with-collapsed-context {
+  margin-right: 60px; /* Adjust based on your collapsed context sidebar width */
+}
+
+/* Sidebar styles */
+.shell-primary-sidebar,
+.shell-context-sidebar {
+  flex-shrink: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: width 0.3s ease, transform 0.3s ease;
+}
+
+.shell-primary-sidebar {
+  width: 240px;
+  background-color: var(--color-sidebar-bg);
+}
+
+.shell-context-sidebar {
+  width: 300px;
+  position: fixed;
+  top: 60px; /* Adjust based on your header height */
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-sidebar-bg);
+}
+
+.shell-context-sidebar.collapsed {
+  width: 60px;
+}
+
+/* Quick access styles */
+.shell-quick-access {
+  flex-shrink: 0;
+  height: 60px;
+  background-color: var(--color-quick-access-bg);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .shell-primary-sidebar {
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    transform: translateX(-100%);
+  }
+  
+  .shell-primary-sidebar.visible {
+    transform: translateX(0);
+  }
+  
+  .shell-context-sidebar {
+    width: 240px;
+    transform: translateX(100%);
+  }
+  
+  .shell-context-sidebar.visible {
+    transform: translateX(0);
+  }
+  
+  .shell-content--with-context,
+  .shell-content--with-collapsed-context {
+    margin-right: 0;
+  }
+} 

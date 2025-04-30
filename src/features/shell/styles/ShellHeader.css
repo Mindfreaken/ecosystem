@@ -1,0 +1,190 @@
+/* ShellHeader.css - Desktop styles */
+.shell-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.shell-logo {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.shell-logo-icon {
+  margin-right: 4px;
+  animation: pulse 5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.shell-title {
+  font-size: 20px;
+  font-weight: 600;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.shell-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.shell-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  --glow-color: rgba(255, 255, 255, 0.2);
+  --glow-pos-x: 50%;
+  --glow-pos-y: 50%;
+}
+
+.shell-action-button:hover {
+  transform: translateY(-1px);
+}
+
+.shell-action-button:active {
+  transform: translateY(0);
+}
+
+/* Dynamic glow effect */
+.shell-action-button::before {
+  content: '';
+  position: absolute;
+  inset: -3px; /* Slightly larger border */
+  border-radius: 75%; /* Adjusted for larger inset */
+  padding: 4px; /* Thicker glow border */
+  background: radial-gradient(
+    circle at var(--glow-pos-x) var(--glow-pos-y),
+    var(--glow-color) 0%,
+    rgba(255, 255, 255, 0.2) 20%,
+    transparent 80%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.2; /* Base glow always visible */
+  transition: opacity 0.3s ease;
+}
+
+/* Subtle pulsing animation */
+@keyframes glowPulse {
+  0% { opacity: 0.2; }
+  50% { opacity: 0.4; }
+  100% { opacity: 0.2; }
+}
+
+.shell-action-button::before {
+  animation: glowPulse 3s infinite ease-in-out;
+}
+
+.shell-action-button:hover::before {
+  opacity: 1; /* Full glow on hover */
+  animation: none; /* Stop pulsing on hover */
+}
+
+.shell-action-button:hover {
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.1), 
+    0 0 20px var(--glow-color); /* Larger glow radius */
+}
+
+.shell-notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.shell-logout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.shell-logout-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shell-search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 100px;
+  z-index: 100;
+}
+
+.shell-search-container {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+}
+
+.shell-search-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  padding: 0;
+}
+
+.shell-search-close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 12px;
+  font-size: 16px;
+  transition: opacity 0.2s;
+}
+
+.shell-search-close:hover {
+  opacity: 0.7;
+} 

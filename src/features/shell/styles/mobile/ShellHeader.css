@@ -1,0 +1,40 @@
+/* Mobile styles for ShellHeader */
+.shell-header {
+  height: 50px !important;
+  padding: 0 12px !important;
+}
+
+.shell-logo {
+  font-size: 20px !important;
+}
+
+.shell-title {
+  font-size: 16px !important;
+}
+
+.shell-header-right {
+  gap: 8px !important;
+}
+
+.shell-logout-button {
+  height: 32px !important;
+  padding: 0 8px !important;
+  font-size: 12px !important;
+}
+
+.shell-search-overlay {
+  padding-top: 70px !important;
+}
+
+.shell-search-container input {
+  font-size: 14px !important;
+}
+
+@media (max-width: 480px) {
+  .shell-title {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+} 

@@ -1,0 +1,114 @@
+/* Mobile styles for the landing page */
+
+/* Small devices (phones, 576px and down) */
+@media (max-width: 576px) {
+  .landing-container {
+    padding: 1rem;
+  }
+  
+  .hero-section {
+    flex-direction: column;
+  }
+  
+  .hero-content {
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  /* Direct override for welcome section button container */
+  section:first-of-type .max-w-4xl .flex.flex-col.sm\:flex-row {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0.5rem !important;
+    justify-content: center !important;
+    margin-top: 1rem !important;
+  }
+  
+  /* Style buttons in the welcome section */
+  section:first-of-type .max-w-4xl .flex.flex-col.sm\:flex-row button {
+    flex: 1 !important;
+    font-size: 0.875rem !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    white-space: nowrap !important;
+    min-width: 0 !important;
+  }
+  
+  /* Feature grid styles for mobile */
+  .max-w-6xl.px-4.flex.flex-col.lg\:flex-row {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  /* Make feature cards more compact */
+  .flex-1.p-4.sm\:p-6.rounded-xl {
+    padding: 1rem !important;
+  }
+  
+  /* Reduce icon size */
+  .icon-glow svg {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+  
+  /* Reduce padding around icon */
+  .mb-3.sm\:mb-5.p-3.sm\:p-4.rounded-full.border-2.icon-glow {
+    padding: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  /* Reduce title size */
+  .text-lg.sm\:text-xl.font-semibold.mb-2.sm\:mb-3.text-glow {
+    font-size: 1.125rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* Reduce description size */
+  .text-sm.sm\:text-base {
+    font-size: 0.875rem !important;
+  }
+  
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .cta-section {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 768px) and (min-width: 577px) {
+  .landing-container {
+    padding: 1.5rem;
+  }
+  
+  .hero-section {
+    flex-direction: column;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  /* Feature grid styles for tablets */
+  .max-w-6xl.px-4.flex.flex-col.lg\:flex-row {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+  
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+} 

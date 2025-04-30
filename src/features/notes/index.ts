@@ -1,0 +1,1 @@
+export { default as NotesModal } from './components/NotesModal'; 

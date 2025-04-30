@@ -1,0 +1,45 @@
+/* Mobile styles for ShellQuickAccess */
+@media screen and (max-width: 767px) {
+  .shell-quick-access {
+    padding: 0 12px;
+    height: 52px;
+  }
+  
+  .shell-quick-access__section {
+    gap: 8px;
+  }
+  
+  .shell-quick-access__support {
+    flex: 1;
+  }
+  
+  .shell-quick-access__button {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  .shell-quick-access__button .shell-quick-access__label {
+    display: none;
+  }
+  
+  .shell-quick-access__button .shell-quick-access__icon {
+    margin-right: 0;
+  }
+  
+  .shell-quick-access__button--support {
+    width: auto;
+    padding: 0 12px;
+    border-radius: 20px;
+  }
+  
+  .shell-quick-access__button--support .shell-quick-access__label {
+    display: inline;
+  }
+  
+  .shell-quick-access__button--support .shell-quick-access__icon {
+    margin-right: 8px;
+  }
+} 

@@ -1,0 +1,63 @@
+.under-construction {
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+.under-construction-content {
+  padding: 1.5rem;
+  max-width: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+}
+
+.under-construction-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.under-construction-cog-small {
+  font-size: 1.2rem;
+  right: 20px;
+}
+
+.under-construction-cog-large {
+  font-size: 2rem;
+  right: 0;
+}
+
+.under-construction-title {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.under-construction-message {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.under-construction-discord {
+  flex-direction: column;
+  padding: 0.75rem;
+}
+
+.under-construction-discord i {
+  margin-right: 0;
+  margin-bottom: 0.5rem;
+}
+
+.under-construction-discord p {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.under-construction-progress {
+  height: 24px;
+  margin-top: 1.5rem;
+}
+
+.under-construction-progress-text {
+  font-size: 0.8rem;
+} 

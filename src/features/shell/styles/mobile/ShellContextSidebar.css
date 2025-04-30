@@ -1,0 +1,77 @@
+/* Mobile styles for ShellContextSidebar */
+@media screen and (max-width: 767px) {
+  .shell-context-sidebar {
+    width: 280px;
+  }
+  
+  .shell-context-sidebar.collapsed {
+    width: 50px;
+  }
+  
+  .shell-context-sidebar__toggle {
+    padding: 0 4px 0 10px;
+    height: 44px;
+  }
+  
+  .shell-context-sidebar__toggle-label span {
+    font-size: 0.9rem;
+  }
+  
+  .shell-context-sidebar__toggle-collapse {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .shell-context-sidebar__content {
+    padding: 10px;
+  }
+  
+  .shell-context-sidebar__notification-card,
+  .shell-context-sidebar__event-card,
+  .shell-context-sidebar__channel-card {
+    margin-bottom: 8px;
+  }
+  
+  .shell-context-sidebar__notification-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .shell-context-sidebar__notification-header h4,
+  .shell-context-sidebar__event-details h4 {
+    font-size: 0.9rem;
+  }
+  
+  .shell-context-sidebar__notification-content p,
+  .shell-context-sidebar__event-details p {
+    font-size: 0.8rem;
+  }
+  
+  .shell-context-sidebar__event-day {
+    font-size: 1.2rem;
+  }
+  
+  .shell-context-sidebar__event-month {
+    font-size: 0.7rem;
+  }
+  
+  .shell-context-sidebar__event-meta {
+    font-size: 0.75rem;
+  }
+  
+  .shell-context-sidebar__live-header h3 {
+    font-size: 1rem;
+  }
+  
+  .shell-context-sidebar__icon-button {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 12px;
+  }
+  
+  .shell-context-sidebar__icon-count {
+    min-width: 14px;
+    height: 14px;
+    font-size: 9px;
+  }
+} 

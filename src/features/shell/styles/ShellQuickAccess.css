@@ -1,0 +1,240 @@
+.shell-quick-access {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  padding: 0 20px;
+  border-top: 1px solid;
+  position: relative;
+}
+
+.shell-quick-access__section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.shell-quick-access__personal {
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.shell-quick-access__support {
+  flex: 2;
+  justify-content: center;
+}
+
+.shell-quick-access__session {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.shell-quick-access__button {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  font-size: 14px;
+  position: relative;
+  --glow-color: rgba(255, 255, 255, 0.2);
+  --glow-pos-x: 50%;
+  --glow-pos-y: 50%;
+  --kofi-highlight-x: 50%;
+  --kofi-highlight-y: 50%;
+  --kofi-shadow-x: 0px;
+  --kofi-shadow-y: 0px;
+}
+
+.shell-quick-access__button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.shell-quick-access__button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.shell-quick-access__button .shell-quick-access__icon {
+  margin-right: 8px;
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+.shell-quick-access__button:hover .shell-quick-access__icon {
+  transform: scale(1.1);
+}
+
+/* Coming soon badge */
+.coming-soon-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff9800;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 10px;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transform-origin: center;
+  animation: pulse 2s infinite;
+}
+
+/* Glow effect button */
+.shell-quick-access__button--glow {
+  overflow: visible;
+  position: relative;
+}
+
+.shell-quick-access__button--glow::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50px;
+  padding: 4px;
+  background: radial-gradient(
+    circle at var(--glow-pos-x) var(--glow-pos-y),
+    var(--glow-color) 0%,
+    rgba(255, 255, 255, 0.2) 20%,
+    transparent 80% 
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.2;
+  transition: opacity 0.3s ease;
+  animation: glowPulse 3s infinite ease-in-out;
+}
+
+.shell-quick-access__button--glow:hover::before {
+  opacity: 1;
+  animation: none;
+}
+
+.shell-quick-access__button--glow:hover {
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.1), 
+    0 0 20px var(--glow-color);
+}
+
+/* Button variants */
+.shell-quick-access__button--primary {
+  background-color: rgba(66, 133, 244, 0.8);
+  color: white;
+}
+
+.shell-quick-access__button--primary:hover {
+  background-color: rgba(66, 133, 244, 1);
+}
+
+.shell-quick-access__button--support {
+  padding: 0 16px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  overflow: hidden;
+  background-color: #13C3FF;
+  color: #FFFFFF;
+  box-shadow: 0 0 0 1px rgba(19, 195, 255, 0.3), 0 0 8px rgba(19, 195, 255, 0.4);
+}
+
+.shell-quick-access__button--support::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--kofi-highlight-x) var(--kofi-highlight-y),
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.shell-quick-access__button--support:hover::after {
+  opacity: 1;
+}
+
+.shell-quick-access__button--support:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    var(--kofi-shadow-x) var(--kofi-shadow-y) 10px rgba(19, 195, 255, 0.3),
+    0 0 20px rgba(19, 195, 255, 0.2);
+}
+
+.shell-quick-access__button--danger {
+  color: #f44336;
+}
+
+.shell-quick-access__button--danger:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.1), 0 0 20px rgba(244, 67, 54, 0.1);
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes glowPulse {
+  0% { opacity: 0.2; }
+  50% { opacity: 0.4; }
+  100% { opacity: 0.2; }
+}
+
+@media (max-width: 767px) {
+  .shell-quick-access__button {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  .shell-quick-access__button .shell-quick-access__label {
+    display: none;
+  }
+  
+  .shell-quick-access__button .shell-quick-access__icon {
+    margin-right: 0;
+  }
+  
+  .shell-quick-access__button--glow::before {
+    border-radius: 50%;
+    inset: -2px;
+    padding: 2px;
+  }
+  
+  .coming-soon-badge {
+    font-size: 8px;
+    padding: 2px 4px;
+    top: -5px;
+    right: -5px;
+  }
+  
+  .shell-quick-access__button--support {
+    width: auto;
+    padding: 0 12px;
+    border-radius: 20px;
+  }
+  
+  .shell-quick-access__button--support .shell-quick-access__label {
+    display: inline;
+  }
+  
+  .shell-quick-access__button--support .shell-quick-access__icon {
+    margin-right: 8px;
+  }
+} 

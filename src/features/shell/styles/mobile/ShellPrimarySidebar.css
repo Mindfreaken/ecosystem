@@ -1,0 +1,37 @@
+/* Mobile styles for ShellPrimarySidebar */
+@media screen and (max-width: 767px) {
+  .shell-primary-sidebar {
+    width: 60px;
+  }
+  
+  .shell-primary-sidebar__toggle {
+    display: none;
+  }
+  
+  .shell-nav-label, 
+  .shell-featured-label {
+    display: none;
+  }
+  
+  .shell-nav-link {
+    justify-content: center;
+    padding: 12px 0;
+  }
+  
+  .shell-nav-item {
+    margin: 4px 4px;
+  }
+  
+  .shell-featured-link {
+    justify-content: center;
+    padding: 12px 0;
+  }
+  
+  .shell-nav-status {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 6px;
+    height: 6px;
+  }
+} 
